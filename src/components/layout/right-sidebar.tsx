@@ -70,6 +70,24 @@ const RightSidebar: React.FC = () => {
           </div>
         </div>
         <ul className="space-y-2">
+          {/* Kontak Admin Discord Khusus */}
+          <li>
+            <Link href="#" className="flex items-center space-x-3 p-1.5 rounded-lg hover:bg-base-300">
+              <div className="avatar relative">
+                <div className="w-7 rounded-full">
+                  <Image src={logoPath} alt="Admin Discord Avatar" width={28} height={28} />
+                </div>
+                {/* Asumsikan admin online */}
+                <span className="absolute bottom-0 right-0 block h-2 w-2 rounded-full bg-green-500 ring-2 ring-white"></span>
+              </div>
+              <div>
+                <span className="block text-sm font-medium truncate text-base-content" title="Bandar Malas (dxtstd)">Bandar Malas (dxtstd)</span>
+                <span className="block text-xs text-blue-500 font-semibold">Admin Discord IMPHEN</span>
+              </div>
+            </Link>
+          </li>
+
+          {/* Kontak Lainnya */}
           {contacts.map((contact, index) => (
             <li key={index}>
               <Link href="#" className="flex items-center space-x-3 p-1.5 rounded-lg hover:bg-base-300">
