@@ -54,16 +54,21 @@ const LeftSidebar: React.FC<LeftSidebarProps> = ({ isOpenOnMobile }) => {
     >
       <nav>
         <ul className="space-y-2">
-          {/* Profil User */}
+          {/* Profil User (diubah menjadi tautan eksternal) */}
           <li>
-            <Link href="/profile" className="flex items-center space-x-3 p-2 rounded-lg hover:bg-base-300">
+            <a 
+              href="https://web.facebook.com/profile.php?id=61555355507836" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="flex items-center space-x-3 p-2 rounded-lg hover:bg-base-300"
+            >
               <div className="avatar">
                 <div className="w-8 rounded-full">
                   <Image src={profileImageUrl} alt="User Avatar" width={32} height={32} />
                 </div>
               </div>
               <span className="font-semibold text-sm text-base-content">{userName}</span>
-            </Link>
+            </a>
           </li>
 
           {/* Menu Utama */}
