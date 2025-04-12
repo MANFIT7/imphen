@@ -172,15 +172,19 @@ export default function HomePage() {
         {/* Berikan state isOpen ke LeftSidebar */}
         <LeftSidebar isOpenOnMobile={isMobileSidebarOpen} />
 
-        <div className="flex-1 min-w-0 max-w-2xl mx-auto py-4 px-2 sm:px-4 lg:mx-0 xl:ml-[20rem] xl:mr-[18rem]"> {/* Adjust margin for large screen sidebars */}
-          {/* Area Konten Utama */}
-          <StoriesReel />
-          <CreatePost onAddPost={handleAddPost} />
-          {/* Render Post Cards dari state `posts` */}
-          <div className="space-y-4 mt-4">
-            {posts.map((post) => (
-              <PostCard key={post.id} {...post} />
-            ))}
+        {/* Kolom luar: flexibel, mengisi ruang, dengan padding */}
+        <div className="flex-1 min-w-0 py-4 px-2 sm:px-4">
+          {/* Kolom dalam: membatasi lebar konten dan memusatkannya */}
+          <div className="max-w-2xl mx-auto">
+            {/* Area Konten Utama */}
+            <StoriesReel />
+            <CreatePost onAddPost={handleAddPost} />
+            {/* Render Post Cards dari state `posts` */}
+            <div className="space-y-4 mt-4">
+              {posts.map((post) => (
+                <PostCard key={post.id} {...post} />
+              ))}
+            </div>
           </div>
         </div>
 
