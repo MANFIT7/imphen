@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/providers/theme-provider";
+import { AppLoader } from "@/components/providers/app-loader";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -22,8 +23,10 @@ export default function RootLayout({
           attribute="data-theme"
           defaultTheme="system"
           enableSystem
-      >
-        {children}
+        >
+          <AppLoader>
+            {children}
+          </AppLoader>
         </ThemeProvider>
       </body>
     </html>
