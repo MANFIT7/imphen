@@ -146,15 +146,15 @@ export default function HomePage() {
     setIsMobileSidebarOpen(!isMobileSidebarOpen);
   };
 
-  // Fungsi untuk menambahkan post baru
-  const handleAddPost = (text: string) => {
+  // Fungsi untuk menambahkan post baru (termasuk gambar)
+  const handleAddPost = (text: string, imageUrl?: string) => {
     const newPost: PostData = {
       id: Date.now().toString(), // ID unik sederhana
       authorName: "Imphen", // Nama user saat ini (ubah jika perlu)
       authorAvatar: "/logo-v1.png", // Avatar user saat ini
       postTime: "Baru Saja",
       postContent: text,
-      // postImage: undefined, // Tidak ada gambar untuk post teks sederhana
+      postImage: imageUrl, // Gunakan URL yang diterima
       likeCount: 0,
       commentCount: 0,
       shareCount: 0,
